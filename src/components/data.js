@@ -1,10 +1,10 @@
 export const data =[
     {
-      name:"Sanwal",
-      Roll:"2342",
-      Class:"Web",
-      Batch:"3",
-      Id:"1"
+      name: "Sanwal",
+      Roll: "2342",
+      Class: "Web",
+      Batch: "3",
+      Id: "1"
     },
 
     {

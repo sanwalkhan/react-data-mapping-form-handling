@@ -8,8 +8,35 @@ function Student() {
 
   return (
     <div>
+
+        <h2>Adding New Students</h2>
+
+        <input type="text"  placeholder="name"/>
+        <br/>
+        <input type="text"  placeholder="Roll"/>
+        <br/>
+
+        <input type="text"  placeholder="Class"/>
+        <br/>
+
+        <input type="text"  placeholder="Batch"/>
+        <br/>
+
+        <input type="text"  placeholder="Id"/>
+
+        <br/>
+
+
+    <button>Submit</button>
+
+        <hr />
+
+        <h3>
+            List Of Students
+        </h3>
       <table>
         <tr>
+            <th>No.</th>
           <th>Name</th>
           <th>Roll</th>
           <th>Class</th>
@@ -19,9 +46,9 @@ function Student() {
         </table>
 
       {
-          students.map((item) => {
+          students.map((item , index ) => {
               return(
-                  <StudentList student={item} />
+                  <StudentList index = {index} student={item} />
               )
           })
       }

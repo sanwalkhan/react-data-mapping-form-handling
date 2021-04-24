@@ -1,11 +1,12 @@
-function StudentList(props) {
+function StudentList({student , index}) {
     return (
         <tr>
-            <td>{props.student.name}</td>
-            <td>{props.student.Roll}</td>
-            <td>{props.student.Class}</td>
-            <td>{props.student.Batch}</td>
-            <td>{props.student.Id}</td>
+            <td>{index + 1}</td>
+            <td>{student.name}</td>
+            <td>{student.Roll}</td>
+            <td>{student.Class}</td>
+            <td>{student.Batch}</td>
+            <td>{student.Id}</td>
 
         </tr>
     )
