@@ -1,4 +1,8 @@
-function StudentList({student , index}) {
+function StudentList({student , index , deleteHandler}) {
+
+    
+
+
     return (
         
         <table border>
@@ -9,6 +13,10 @@ function StudentList({student , index}) {
             <td>{student.Class}</td>
             <td>{student.Batch}</td>
             <td>{student.Id}</td>
+
+            <td>
+                <button onClick={()=>deleteHandler(student.Id)}>Delete</button>
+            </td>
 
         </tr>
         

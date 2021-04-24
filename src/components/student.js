@@ -41,6 +41,22 @@ function Student() {
 
  }
 
+
+ const deleteHandler=(Id)=>{
+    console.log('index :>> ', Id);
+
+    let NewStudent  =students.filter((student , i) => {
+        if(i !== Id ){
+
+            return student;
+        }
+    })
+
+    setStudents([...NewStudent]);
+
+    console.log('newstudents :>> ' , NewStudent);
+  }
+
   return (
     <div>
 
@@ -72,20 +88,23 @@ function Student() {
             List Of Students
         </h3>
       <table >
-          <tr >
-         <th>No.</th>
+          <tr>
+              
+          <th>No.</th>
           <th>Name</th>
           <th>Roll</th>
           <th>Class</th>
           <th>Batch</th>
           <th>Id</th>
-        </tr>
+
+          </tr>
+        
         </table>
 
       {
           students.map((item , index ) => {
               return(
-                  <StudentList index = {index} student={item} />
+                  <StudentList index = {index} student={item} deleteHandler = {deleteHandler} />
               )
           })
       }
