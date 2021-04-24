@@ -42,20 +42,20 @@ function Student() {
  }
 
 
- const deleteHandler=(Id)=>{
-    console.log('index :>> ', Id);
+ const deleteHandler = (index) => {
+    // console.log('name', stuname);
 
-    let NewStudent  =students.filter((student , i) => {
-        if(i !== Id ){
-
+    let newStudents = students.filter((student, i) => {
+        if (i !== index) {
             return student;
         }
-    })
+    });
 
-    setStudents([...NewStudent]);
+    setStudents([...newStudents]);
 
-    console.log('newstudents :>> ' , NewStudent);
-  }
+    console.log("newStudents", newStudents);
+}
+  
 
   return (
     <div>
