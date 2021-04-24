@@ -1,7 +1,9 @@
 function StudentList({student , index}) {
     return (
-        <tr>
-            <td>{index + 1}</td>
+        
+        <table border>
+        <tr >
+            <td >{index + 1}</td>
             <td>{student.name}</td>
             <td>{student.Roll}</td>
             <td>{student.Class}</td>
@@ -9,6 +11,9 @@ function StudentList({student , index}) {
             <td>{student.Id}</td>
 
         </tr>
+        
+        
+        </table>
     )
 }
 

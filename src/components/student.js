@@ -5,38 +5,75 @@ import StudentList from "./studentlist";
 
 function Student() {
   const [students, setStudents] = useState(data);
+  const [name, setName] = useState("")
+  const [Roll, setRoll] = useState("")
+  const [Class, setClass] = useState("")
+
+  const [Batch, setBatch] = useState("")
+
+  const [Id, setId] = useState("")
+
+  const [error, setError] = useState("")
+
+ const ctaHandler =() =>{
+     if (name !=="" && Roll !=="" &&  Class !=="" && Batch !=="" && Id !== "" ){
+     let student = {
+         name,
+         Roll,
+         Class,
+         Batch,
+         Id
+     }
+     console.log('student :>> ', student);
+
+    
+
+     setStudents([...students,student])
+     setName("");
+     setRoll("");
+     setClass("");
+     setBatch("");
+     setId("");
+    }
+    else{
+        setError("Inputs Cant be Empty")
+    }
+
+ }
 
   return (
     <div>
 
         <h2>Adding New Students</h2>
 
-        <input type="text"  placeholder="name"/>
+        <input type="text" name="name" value={name} placeholder="name"  onChange={(e) => setName(e.target.value)}/>
         <br/>
-        <input type="text"  placeholder="Roll"/>
-        <br/>
-
-        <input type="text"  placeholder="Class"/>
+        <input type="text"  name = "Roll" value={Roll} placeholder="Roll"  onChange={(e) => setRoll(e.target.value)} />
         <br/>
 
-        <input type="text"  placeholder="Batch"/>
+        <input type="text" name="Class" value={Class}  placeholder="Class"  onChange={(e) => setClass(e.target.value)} />
         <br/>
 
-        <input type="text"  placeholder="Id"/>
+        <input type="text" name="Batch" value={Batch} placeholder="Batch"  onChange={(e) => setBatch(e.target.value)} />
+        <br/>
+
+        <input type="text"  name="Id" value={Id} placeholder="Id"  onChange={(e) => setId(e.target.value)} />
 
         <br/>
 
 
-    <button>Submit</button>
+    <button onClick={ctaHandler}>Submit</button>
+
+    <p style={{backgroundColor:"red", color:"white"}}>{ error} </p>
 
         <hr />
 
         <h3>
             List Of Students
         </h3>
-      <table>
-        <tr>
-            <th>No.</th>
+      <table >
+          <tr >
+         <th>No.</th>
           <th>Name</th>
           <th>Roll</th>
           <th>Class</th>
